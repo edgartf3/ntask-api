@@ -1,17 +1,13 @@
 import express from 'express';
-const PORT = 3000;
+import consign from 'consign';
 
-const app = express()
-app.set('json spaces', 4)
-app.get('/', (req, res) => res.json({status: 'NTask API'}))
+const app = express();
 
-app.get('/tasks', (req, res) => {
-    res.json({
-        tasks: [
-            {title: 'Fazer Compras'},
-            {title: 'Consertar o pc'}
-        ]
-    })
-})
+app.set('json spaces', 4);
 
-app.listen(PORT, () => console.log(`NTask API - porta ${PORT}`))
+consign()
+    .include("models")
+    .then("libs/middlewares.js")    
+    .then("routes")
+    .then("libs/boot.js")
+    .into(app);

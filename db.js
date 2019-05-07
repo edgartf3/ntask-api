@@ -25,8 +25,14 @@ module.exports = app => {
             db.models[model.name] = model;
         });
         Object.keys(db.models).forEach(key => {
-            console.log(key);
-            db.models[key].associate(db.models);
+            //ao executar o projeto dá o seguinte erro:
+            //C:\Sistemas\Laboratorio\node\ntask-api\db.js:35
+            //db.models[key].associate(db.models);
+            //               ^
+            //TypeError: db.models[key].associate is not a function            
+
+
+            //db.models[key].associate(db.models);
         });        
     }
     return db;

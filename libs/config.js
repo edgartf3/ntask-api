@@ -9,5 +9,7 @@ module.exports = {
         define: {
             underscored: true
         }
-    }
+    },
+    jwtSecret: "ntask$K-ap1",
+    jwtSession: { session: false }
 };

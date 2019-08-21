@@ -27,7 +27,7 @@ module.exports = app => {
             return passaport.initialize();
         },
         authenticate: () => {
-            return passaport.authenticate("jwt", cfg.jwt.Session);
+            return passaport.authenticate("jwt", cfg.jwtSession);
         }
     };    
 };

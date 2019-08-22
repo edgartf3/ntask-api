@@ -27,6 +27,7 @@ module.exports = app => {
             return passaport.initialize();
         },
         authenticate: () => {
+            //console.Console(cfg.jwtSession)
             return passaport.authenticate("jwt", cfg.jwtSession);
         }
     };    

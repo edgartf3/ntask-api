@@ -1,5 +1,6 @@
 import express from 'express';
 import consign from 'consign';
+import { Module } from 'module';
 
 const app = express();
 
@@ -11,3 +12,5 @@ consign()
     .then("routes")
     .then("libs/boot.js")
     .into(app);
+
+module.exports = app

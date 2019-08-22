@@ -14,6 +14,8 @@ module.exports = app => {
                         res.json({
                             token: jwt.encode(payload, cfg.jwtSecret)
                         })
+                    } else {
+                        res.sendStatus(401);
                     }
                 })
                 .catch(error => res.sendStatus(401));

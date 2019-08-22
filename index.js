@@ -1,6 +1,5 @@
 import express from 'express';
 import consign from 'consign';
-import { Module } from 'module';
 
 const app = express();
 

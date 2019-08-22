@@ -1,11 +1,13 @@
 import { request } from "http";
+import { isNullOrUndefined } from "util";
 
 describe("Routes: Token", () => {
-    const Users = app.db.modes.Users;
-    describe("POST /token", () => {
-
         
+    describe("POST /token", () => { 
+                
+        const Users = app.db.modes.Users;
         beforeEach(done => {
+            
             Users.destroy({where: {}})
             .then(() => Users.create({
                 name: "john",
